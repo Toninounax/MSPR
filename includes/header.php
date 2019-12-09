@@ -12,6 +12,13 @@
 <body>
 <div id="app">
     <header id="header">
-        //NAVBAR
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Musilist</a>
+
+            <form class="form-inline">
+                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Account</a>
+            </form>
+        </nav>
     </header>
     <main id="main">
