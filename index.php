@@ -1,14 +1,12 @@
-<?php require_once 'includes/header.php'; ?>
-<?php
-/*session_start();
+<?php require_once './includes/header.php'; ?>
+<?php/*
+session_start();
 if(isset($_SESSION["id"])){ //Si la variable session id existe
-    include "";
+    include "index.php";
 } else {
-    include ""; //Si la variable n'existe pas redirection sur la page de login
-}
-*/
+    include "register.php"; //Si la variable n'existe pas redirection sur la page de login
+}*/
 ?>
-
     <!doctype html>
     <html lang="en">
     <head>
@@ -43,25 +41,8 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
 
-                        <button type="button" class="btn btn-primary">Découvir !</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card mb-3">
-                    <img src="http://placehold.it/50x10" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
                             <button type="button" class="btn btn-primary">Découvir !</button>
                         </div>
                     </div>
@@ -78,9 +59,26 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
                     </div>
                     <div class="card-footer">
                         <div class="row">
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
+                            <button type="button" class="btn btn-primary">Découvir !</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="http://placehold.it/50x10" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
                             <div class="mt-4 float-right">
-                            <button type="button" class="btn btn-primary">Découvir !</button>
+                                <button type="button" class="btn btn-primary">Découvir !</button>
                             </div>
                         </div>
                     </div>
@@ -93,4 +91,6 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
     </html>
 
 
-<?php require_once 'includes/footer.php'; ?>
+
+
+<?php require_once './includes/footer.php'; ?>
