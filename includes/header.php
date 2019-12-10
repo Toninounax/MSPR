@@ -6,18 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>Facebook</title>
+    <title>MusiList</title>
     <link rel="stylesheet" href="./public/css/app.css">
 </head>
 <body>
 <div id="app">
     <header id="header">
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark ">
             <a class="navbar-brand" href="#">Musilist</a>
 
             <form class="form-inline">
-                <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Account</a>
+                <a class="nav-item nav-link active" href="./">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="profil.php">Account</a>
             </form>
         </nav>
     </header>

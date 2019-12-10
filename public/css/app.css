@@ -11356,3 +11356,26 @@ a.text-dark:focus {
   }
 }
 
+#main .list-group {
+  size: 50px;
+}
+
+#main .stick {
+  display: -webkit-box;
+  display: flex;
+}
+
+#header .navbar {
+  padding: 1rem 1rem;
+  background-color: #FF5964;
+}
+
+#header .navbar-brand {
+  padding-left: 20px;
+  font-size: 50px;
+}
+
+#header .nav-item {
+  font-size: 20px;
+}
+
