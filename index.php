@@ -33,7 +33,7 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
 
             <div class="col">
                 <div class="card mb-3">
-                    <img src="https://marsactu.fr/wp-content/uploads/2019/11/the-disruptives-%C2%A9-Fanchon-Bilbille-e1574431910687.jpg" class="card-img-top" alt="...">
+                    <img src="http://placehold.it/900x200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -51,7 +51,7 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
 
             <div class="col">
                 <div class="card mb-3">
-                    <img src="http://placehold.it/50x10" class="card-img-top" alt="...">
+                    <img src="http://placehold.it/900x200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -68,7 +68,7 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
 
             <div class="col">
                 <div class="card mb-3">
-                    <img src="http://placehold.it/50x10" class="card-img-top" alt="...">
+                    <img src="http://placehold.it/900x200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
