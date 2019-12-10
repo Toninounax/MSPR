@@ -69,20 +69,14 @@
         </div>
         <div class="col-sm-2 bg-secondary text-black">
 
-            <aside>
-                <h4>UserName</h4>
-            </aside>
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <div class="card" style="width: 18rem;">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Cras justo odio</li>
-                            <li class="list-group-item">Dapibus ac facilisis in</li>
-                            <li class="list-group-item">Vestibulum at eros</li>
-                        </ul>
-                    </div>
-                </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Cras justo odio</li>
+                        <li class="list-group-item">Dapibus ac facilisis in</li>
+                        <li class="list-group-item">Vestibulum at eros</li>
+                    </ul>                </div>
             </div>
         </div>
     </<div>
