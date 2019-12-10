@@ -2,23 +2,26 @@
 require_once '../includes/helpers.php';
 
 
+$email = filter_input(INPUT_POST, "email");
+$password = filter_input(INPUT_POST, "password");
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
+$dbh = connectDB();
 
-    connectDB();
-    // cette requête permet de récupérer l'utilisateur depuis la BD
-    $requete = "SELECT * FROM users WHERE email=? AND password=?";
-    $resultat = $dbh->prepare($requete);
-    $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
-    $resultat->execute(array($email, $mdp));
-    if ($resultat->rowCount() == 1) {
-        // l'utilisateur existe dans la table
-        // on ajoute ses infos en tant que variables de session
-        $_SESSION['login'] = $email;
-        $_SESSION['mdp'] = $mdp;
-        // cette variable indique que l'authentification a réussi
-        $authOK = true;
-    }
+$stmt = $dbh->prepare( "SELECT * FROM users WHERE email = :email LIMIT 1");
+$stmt->bindValue(':email', $email);
+$stmt->execute();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+if($user['password'] === sha1($password)){
+    $_SESSION['auth_id'] = $user['id'];
+
+    header('Location: ../index.php');
+
+    exit;
+} else{
+    header('Location: /mspr/login.php');
 }
-?>

@@ -15,12 +15,20 @@
 <div id="app">
     <header id="header">
         <nav class="navbar navbar-dark ">
-            <a class="navbar-brand" href="#">Musilist</a>
+            <a class="navbar-brand" href="./">Musilist</a>
 
+            <?php if(isAuth()): ?>
             <form class="form-inline">
-                <a class="nav-item nav-link active" href="./">Home<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="profil.php">Account</a>
+                <a class="nav-item nav-link active" href="assets/logout.php">deconnexion<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="profil.php">profile</a>
             </form>
+            <?php else: ?>
+            <form class="form-inline">
+                <a class="nav-item nav-link active" href="register.php">Inscription<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="login.php">Connexion</a>
+            </form>
+            <?php endif; ?>
+
         </nav>
     </header>
     <main id="main">

@@ -12,6 +12,9 @@ function getPath($path){
     return $_SERVER['DOCUMENT_ROOT'] . '/mspr/' . $path;
 }
 
+/**
+ * @return PDO
+ */
 function connectDB(){
     try {
 
@@ -26,6 +29,9 @@ function connectDB(){
 }
 
 
+/**
+ * @return mixed
+ */
 function getUsers(){
     $dbh = connectDB();
     $stmt = $dbh->prepare("SELECT * FROM users");
@@ -33,3 +39,9 @@ function getUsers(){
     return $dbh->fetchAll(PDO::FETCH_ASSOC);
 }
 
+/**
+ * @return bool
+ */
+function isAuth(){
+    return isset($_SESSION['auth_id']);
+}

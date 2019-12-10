@@ -1,6 +1,5 @@
 <?php require_once 'includes/header.php'; ?>
 
-<?php $errors = isset($_SESSION['errors']) ? $_SESSION['errors'] : []; ?>
 
 <h1 class="text-center mt-3">Inscription</h1>
 
@@ -36,8 +35,5 @@
             </div>
 
 
-<?php
-$_SESSION['errors'] = [];
-?>
 
 <?php require_once 'includes/footer.php'; ?>

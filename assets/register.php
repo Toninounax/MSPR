@@ -13,14 +13,13 @@ $dbh = connectDB();
     $stmt->bindValue(':first_name', $first_name);
     $stmt->bindValue(':last_name', $last_name);
     $stmt->bindValue(':email', $email);
-    $stmt->bindValue(':password', $password);
+    $stmt->bindValue(':password', sha1($password));
     $stmt->execute();
 
 
     $id = $dbh->lastInsertId();
 
-
-dd($id);
+    header("Location: index.php");
 
 ?>
 

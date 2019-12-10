@@ -4,9 +4,16 @@
     <list default="true" id="c75e916c-adb1-4802-8e27-ff1077a54c4d" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/playlist_create.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/profil.php" beforeDir="false" afterPath="$PROJECT_DIR$/profil.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/layout/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/layout/_main.scss" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/assets/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/assets/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
