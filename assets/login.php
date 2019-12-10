@@ -2,31 +2,23 @@
 require_once '../includes/helpers.php';
 
 
-$msg = "";
-if(isset($_POST['buttonLogin'])) {
-    $email = trim($_POST['email']);
-    $password = trim($_POST['password']);
-    if ($email != "" && $password != "") {
-        try {
-            $query = "select * from `users` where `email`=:email and `password`=:password";
-            $stmt = $db->prepare($query);
-            $stmt->bindParam('username', $email, PDO::PARAM_STR);
-            $stmt->bindValue('password', $password, PDO::PARAM_STR);
-            $stmt->execute();
-            $count = $stmt->rowCount();
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($count == 1 && !empty($row)) {
-                /******************** Your code ***********************/
-                $_SESSION['sess_user_id'] = $row['uid'];
 
+if (isset($_POST['email']) && isset($_POST['password'])) {
 
-            } else {
-
-            }
-        } catch (PDOException $e) {
-            echo "Error : " . $e->getMessage();
-        }
-    } else {
-        $msg = "Both fields are required!";
+    connectDB();
+    // cette requête permet de récupérer l'utilisateur depuis la BD
+    $requete = "SELECT * FROM users WHERE email=? AND password=?";
+    $resultat = $dbh->prepare($requete);
+    $email = $_POST['email'];
+    $mdp = $_POST['mdp'];
+    $resultat->execute(array($email, $mdp));
+    if ($resultat->rowCount() == 1) {
+        // l'utilisateur existe dans la table
+        // on ajoute ses infos en tant que variables de session
+        $_SESSION['login'] = $email;
+        $_SESSION['mdp'] = $mdp;
+        // cette variable indique que l'authentification a réussi
+        $authOK = true;
     }
 }
+?>
