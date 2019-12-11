@@ -19,7 +19,7 @@ $dbh = connectDB();
 
     $id = $dbh->lastInsertId();
 
-    header("Location: ../index.php");
+    header("Location: ../index.php?=$id");
 
 ?>
 

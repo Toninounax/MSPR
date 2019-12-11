@@ -19,7 +19,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if($user['password'] === sha1($password)){
     $_SESSION['auth_id'] = $user['id'];
 
-    header('Location: ../index.php');
+    $id = $user['id'];
+
+    header("Location: ../index.php?=$id");
 
     exit;
 } else{

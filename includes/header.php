@@ -15,12 +15,12 @@
 <div id="app">
     <header id="header">
         <nav class="navbar navbar-dark ">
-            <a class="navbar-brand" href="./">Musilist</a>
+            <a class="navbar-brand" href="./index.php?=<?php echo $_SESSION['auth_id'];?>">Musilist</a>
 
             <?php if(isAuth()): ?>
             <form class="form-inline">
                 <a class="nav-item nav-link active" href="assets/logout.php">deconnexion<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="profil.php">profile</a>
+                <a class="nav-item nav-link" href="profil.php?=<?php echo $_SESSION['auth_id'];?>">profile</a>
             </form>
             <?php else: ?>
             <form class="form-inline">

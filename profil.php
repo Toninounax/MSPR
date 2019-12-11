@@ -1,4 +1,11 @@
 <?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/helpers.php'; ?>
+
+<?php
+$dbh = connectDB();
+dd($_SESSION['auth_id']);
+$reponse = $dbh->query('SELECT * FROM playlists WHERE user_id === $id');
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,16 +30,20 @@
     <div class="card-body">
         <form method="post" action="assets/playlist.php">
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">Nom de la Playlist</label>
-                <div class="stick">
-                <input class="form-control form-control-lg" type="text">
-                </div>
 
-                    <label for="exampleFormControlTextarea1">Choisissez une photo</label>
+                <div>
+                <label for="title">Nom de la Playlist</label>
+                <input class="form-control form-control-lg" name="title" type="text">
+
+                </div>
+                <div>
+                    <label for="imgPlaylist">Choisissez une photo</label>
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <input type="file" name="imgPlaylist" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
                         <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                     </div>
+
+                </div>
                 <button type="submit" class="btn btn-primary">Ajouter</button>
 
 
@@ -49,28 +60,25 @@
 
                 <div class="container">
                     <div class="row">
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
+                        <?php $resultats = $reponse->fetchAll();
+                        for ($i=0; $i<=count($resultats) -1; $i++){?>
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <?php echo $resultats[$i]['title']; ?>
+                                    </h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">découvrez ma playlist</a>
+                                </div>
+                            </div>
+                        </div>
+                        <?php }  ?>
+
+                    </div>
+                </div>
 
 
             </main>
@@ -84,7 +92,7 @@
                         <li class="list-group-item">Cras justo odio</li>
                         <li class="list-group-item">Dapibus ac facilisis in</li>
                         <li class="list-group-item">Vestibulum at eros</li>
-                    </ul>                </div>
+                    </ul>
             </div>
         </div>
     </<div>
