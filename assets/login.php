@@ -23,5 +23,5 @@ if($user['password'] === sha1($password)){
 
     exit;
 } else{
-    header('Location: /mspr/login.php');
+    header('Location: /mspr/login.php?id=<?php $user[\'id\'];?>');
 }

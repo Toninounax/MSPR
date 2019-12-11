@@ -21,13 +21,21 @@
     </div>
 
     <div class="card-body">
-        <form>
+        <form method="post" action="assets/playlist.php">
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Nom de la Playlist</label>
                 <div class="stick">
                 <input class="form-control form-control-lg" type="text">
-                    <a class="btn btn-primary" href="playlist_create.php" role="button">Ajouter</a>
                 </div>
+
+                    <label for="exampleFormControlTextarea1">Choisissez une photo</label>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+
+
             </div>
         </form>
     </div>
