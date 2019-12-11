@@ -3,8 +3,7 @@
 
 <?php
 $dbh = connectDB();
-dd($_SESSION['auth_id']);
-$reponse = $dbh->query('SELECT * FROM playlists WHERE user_id === $id');
+$reponse = $dbh->query('SELECT * FROM playlists');
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,6 +15,12 @@ $reponse = $dbh->query('SELECT * FROM playlists WHERE user_id === $id');
     <title>Document</title>
 </head>
 <body>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="../mspr">Accueil</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Profil</li>
+    </ol>
+</nav>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm vh-100 text-grey">
@@ -83,9 +88,9 @@ $reponse = $dbh->query('SELECT * FROM playlists WHERE user_id === $id');
 
             </main>
         </div>
-        <div class="col-sm-2 bg-secondary text-black">
+        <div class="col-sm-2 text-black bord">
 
-            <div class="card" style="width: 18rem;">
+            <div class="card zap" style="width: 18rem;">
                 <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
                 <div class="card-body">
                     <ul class="list-group list-group-flush">

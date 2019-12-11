@@ -11365,6 +11365,36 @@ a.text-dark:focus {
   display: flex;
 }
 
+#main .loup {
+  margin-top: 20px;
+}
+
+#main .yop {
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+#main .bord {
+  border-left: thin solid grey;
+}
+
+#main .zap {
+  margin-top: 55px;
+}
+
+#main .jok {
+  margin-top: 30px;
+  margin-left: 15px;
+}
+
+#main .jab {
+  width: 315;
+}
+
+#main .pad {
+  margin-top: 20px;
+}
+
 #header .navbar {
   padding: 1rem 1rem;
   background-color: #FF5964;
