@@ -18,7 +18,7 @@ $stmt->execute();
 $id = $dbh->lastInsertId();
 
 
-header( "Location: ../playlist.php?=$id");
+header( "Location: ../playlist.php?id=$id");
 
 
 ?>

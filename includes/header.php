@@ -15,20 +15,29 @@
 <div id="app">
     <header id="header">
         <nav class="navbar navbar-dark ">
-            <a class="navbar-brand" href="./index.php?=<?php echo $_SESSION['auth_id'];?>">Musilist</a>
+            <a class="navbar-brand" href="./index.php?id=<?php echo $_SESSION['auth_id'];?>">Musilist</a>
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
+            </li>
 
             <?php if(isAuth()): ?>
-            <form class="form-inline">
+            <li class="form-inline">
                 <a class="nav-item nav-link active" href="assets/logout.php">deconnexion<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="profil.php?=<?php echo $_SESSION['auth_id'];?>">profile</a>
-            </form>
+                <a class="nav-item nav-link" href="profil.php?id=<?php echo $_SESSION['auth_id'];?>">profile</a>
+            </li>
             <?php else: ?>
-            <form class="form-inline">
+
+            <li>
                 <a class="nav-item nav-link active" href="register.php">Inscription<span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="login.php">Connexion</a>
-            </form>
+            </li>
             <?php endif; ?>
 
         </nav>
     </header>
+
+    <?php require_once 'debug.php';?>
+
     <main id="main">

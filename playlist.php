@@ -1,4 +1,12 @@
-<?php require_once 'includes/header.php'; ?>
+<?php require_once 'includes/header.php';
+
+$id = $_GET['id'];
+$dbh = connectDB();
+$stmt = $dbh->prepare("SELECT * FROM songs WHERE playlist_id = $id ");
+$stmt->execute();
+
+?>
+
 
 
 <!doctype html>
@@ -20,43 +28,30 @@
 </nav>
 <div class="jumbotron">
     <h1>Ajoutez des morceaux à votre playlist !</h1>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-8">
-            <div class="card yop">
-                <div class="card-header">
-                    Nouveau morceau
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Lien YouTube</h5>
-                    <div class="stick">
-                        <input class="form-control form-control-lg" type="text">
-                    </div>
-                    <div class="stick pad">
-                        <input class="form-control form-control-lg" type="text" placeholder="Artiste(s)">
-                    </div>
-                    <div class="stick pad">
-                        <input class="form-control form-control-lg" type="text" placeholder="Nom du morceau">
-                    </div>
-                    <a href="#" class="btn btn-primary loup">Ajouter</a>
-                </div>
-            </div>
-        </div>
+    <a class="nav-link" data-toggle="collapse" href="#addPlaylist">ajouter une playlist</a>
 
-    </div>
-</div>
 
+
+
+
+    <?php $resultats = $stmt->fetchAll();
+    for ($i=0; $i<=count($resultats) -1; $i++){?>
     <div class="card jok" style="width: 362px;">
-        <iframe width="360" height="315" src="https://www.youtube.com/embed/HYT52LPs3NM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="360" height="315" src="<?php echo $resultats[$i]['link']; ?>" frameborder="0" allowfullscreen></iframe>
         <div class="card-body jab">
-            <h5 class="card-title">Titre</h5>
-            <h6 class="card-text">Artiste</h6>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">
+                <?php echo $resultats[$i]['title']; ?>
+            </h5>
+            <h6 class="card-text">
+                <?php echo $resultats[$i]['artiste']; ?>
+            </h6>
+            <a href="<?php echo $resultats[$i]['link']; ?>" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
+    <?php }?>
 
 </div>
-
+<?php require_once 'includes/addPlaylist.php';?>
 </body>
 </html>
 <?php require_once 'includes/footer.php'; ?>

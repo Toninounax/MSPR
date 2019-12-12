@@ -1,11 +1,12 @@
 <?php require_once './includes/header.php'; ?>
-<?php/*
-session_start();
-if(isset($_SESSION["id"])){ //Si la variable session id existe
-    include "index.php";
-} else {
-    include "register.php"; //Si la variable n'existe pas redirection sur la page de login
-}*/
+<?php require_once './includes/helpers.php'; ?>
+<?php
+
+$dbh = connectDB();
+$id = $_GET['id'];
+$stmt = $dbh->prepare("SELECT * FROM playlists");
+$stmt->execute();
+
 ?>
     <!doctype html>
     <html lang="en">
@@ -31,59 +32,29 @@ if(isset($_SESSION["id"])){ //Si la variable session id existe
         </div>
         <div class="container .col-12 .col-md-8">
 
-            <div class="col">
-                <div class="card mb-3">
-                    <img src="img/FondA.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
 
-                            <button type="button" class="btn btn-primary">Découvir !</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <?php $resultats = $stmt->fetchAll();
+            for ($i=0; $i<=count($resultats) -1; $i++){?>
             <div class="col">
                 <div class="card mb-3">
                     <img src="img/FondB.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title">
+                            <?php echo $resultats[$i]['title']; ?>
+                        </h5>
                         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
                     <div class="card-footer">
                         <div class="row">
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
-                            <button type="button" class="btn btn-primary">Découvir !</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col">
-                <div class="card mb-3">
-                    <img src="img/FondC.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="row">
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, modi.</p>
-                            <div class="mt-4 float-right">
-                                <button type="button" class="btn btn-primary">Découvir !</button>
-                            </div>
+                            <a href="playlist.php?id=<?php echo $resultats[$i]['id'] ?>"><button type="button" class="btn btn-primary">Découvir !</button><a>
                         </div>
                     </div>
                 </div>
             </div>
+                <?php } ?>
         </div>
     </div>
 

@@ -3,7 +3,11 @@
 
 <?php
 $dbh = connectDB();
-$reponse = $dbh->query('SELECT * FROM playlists');
+$id = $_GET['id'];
+$stmt = $dbh->prepare("SELECT * FROM playlists WHERE user_id = $id ");
+$stmt->execute();
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,7 +37,7 @@ $reponse = $dbh->query('SELECT * FROM playlists');
     </div>
 
     <div class="card-body">
-        <form method="post" action="assets/playlist.php">
+        <form method="post" action="assets/playlist.php?id=<?php echo $id; ?>">
             <div class="form-group">
 
                 <div>
@@ -66,7 +70,7 @@ $reponse = $dbh->query('SELECT * FROM playlists');
                 <div class="container">
                     <div class="row">
 
-                        <?php $resultats = $reponse->fetchAll();
+                        <?php $resultats = $stmt->fetchAll();
                         for ($i=0; $i<=count($resultats) -1; $i++){?>
                         <div class="col">
                             <div class="card" style="width: 18rem;">
@@ -76,7 +80,7 @@ $reponse = $dbh->query('SELECT * FROM playlists');
                                         <?php echo $resultats[$i]['title']; ?>
                                     </h5>
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">découvrez ma playlist</a>
+                                    <a href="playlist.php?id=<?php echo $resultats[$i]['id'] ?>" class="btn btn-primary">découvrez ma playlist</a>
                                 </div>
                             </div>
                         </div>
