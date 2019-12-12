@@ -7,7 +7,7 @@
         <h5 class="card-title">
             <?php echo $playlist['title']; ?>
         </h5>
-        <div><?php $playlist['like'] ?></div>
+        <div><?php echo count(getPlaylistLikes($playlist['id'])); ?></div>
        <small class="text-muted">Last updated 3 mins ago</small>
     </div>
     <div class="card-footer">

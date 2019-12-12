@@ -67,3 +67,23 @@ function isAuth(){
     return isset($_SESSION['auth_id']);
 }
 
+
+
+
+function likePlaylist($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('INSERT INTO likes (playlist_id, user_id) VALUES (:playlist_id, :user_id)');
+    $stmt->bindValue(':playlist_id', $id);
+    $stmt->bindValue(':user_id', $_SESSION['auth_id']);
+    $stmt->execute();
+
+    return true;
+}
+
+function getPlaylistLikes($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare('SELECT * FROM likes WHERE playlist_id = :id');
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
