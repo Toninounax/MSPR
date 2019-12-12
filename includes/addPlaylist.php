@@ -1,28 +1,32 @@
-<div class="collapse container-fluid" id="addPlaylist">
-    <div class="row">
-        <div class="col-8">
-            <div class="card yop">
-                <div class="card-header">
-                    Nouveau morceau
-                </div>
-                <form method="post" action="assets/addSong.php?id=<?php echo $id ?>">
-                    <div class="card-body">
-                        <h5 class="card-title">Lien YouTube</h5>
-                        <div class="stick">
-                            <input type="text" name="link" class="form-control form-control-lg" type="text">
-                        </div>
-                        <div class="stick pad">
-                            <input type="text" name="artiste" class="form-control form-control-lg" type="text" placeholder="Artiste(s)">
+<div class="card collapse" id="addPlaylist">
+    <div class="card-header">
 
-                        </div>
-                        <div class="stick pad">
-                            <input type="text" name="title" class="form-control form-control-lg" type="text" placeholder="Nom du morceau">
-                        </div>
-                        <button type="submit" class="btn btn-primary loup">Ajouter</button>
-                    </div>
-                </form>
-            </div>
-        </div>
 
+        <h4>Ajouter une Playlist</h4>
     </div>
+
+    <div class="card-body">
+        <form method="post" action="assets/playlist.php?id=<?php echo $id; ?>">
+            <div class="form-group">
+
+                <div>
+                    <label for="title">Nom de la Playlist</label>
+                    <input class="form-control form-control-lg" name="title" type="text">
+
+                </div>
+                <div>
+                    <label for="imgPlaylist">Choisissez une photo</label>
+                    <div class="custom-file">
+                        <input type="file" name="imgPlaylist" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+
+
+            </div>
+        </form>
+    </div>
+
 </div>

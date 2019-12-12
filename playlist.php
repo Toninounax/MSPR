@@ -28,10 +28,34 @@ $stmt->execute();
 </nav>
 <div class="jumbotron">
     <h1>Ajoutez des morceaux à votre playlist !</h1>
-    <a class="nav-link" data-toggle="collapse" href="#addPlaylist">ajouter une playlist</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8">
+            <div class="card yop">
+                <div class="card-header">
+                    Nouveau morceau
+                </div>
+                <form method="post" action="assets/addSong.php?id=<?php echo $id ?>">
+                <div class="card-body">
+                    <h5 class="card-title">Lien YouTube</h5>
+                    <div class="stick">
+                        <input type="text" name="link" class="form-control form-control-lg" type="text">
+                    </div>
+                    <div class="stick pad">
+                        <input type="text" name="artiste" class="form-control form-control-lg" type="text" placeholder="Artiste(s)">
 
+                    </div>
+                    <div class="stick pad">
+                        <input type="text" name="title" class="form-control form-control-lg" type="text" placeholder="Nom du morceau">
+                    </div>
+                    <button type="submit" class="btn btn-primary loup">Ajouter</button>
+                </div>
+                </form>
+            </div>
+        </div>
 
-
+    </div>
+</div>
 
 
     <?php $resultats = $stmt->fetchAll();
@@ -51,7 +75,7 @@ $stmt->execute();
     <?php }?>
 
 </div>
-<?php require_once 'includes/addPlaylist.php';?>
+
 </body>
 </html>
 <?php require_once 'includes/footer.php'; ?>
