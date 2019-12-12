@@ -36,9 +36,42 @@ function getUsers(){
     $dbh = connectDB();
     $stmt = $dbh->prepare("SELECT * FROM users");
     $stmt->execute();
-    return $dbh->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+
+
+/**
+ * @return mixed
+ */
+function getPlaylists(){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM playlists");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+
+/**
+ * @return mixed
+ */
+function getPlaylist($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM playlists WHERE id = :id LIMIT 1");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+
+
+function getSongs($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM songs WHERE playlist_id = :id");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 /**
  * @return bool
  */

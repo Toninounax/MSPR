@@ -14,30 +14,39 @@
 <body>
 <div id="app">
     <header id="header">
-        <nav class="navbar navbar-dark ">
-            <a class="navbar-brand" href="./index.php?id=<?php echo $_SESSION['auth_id'];?>">Musilist</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./">Musilist</a>
 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
-            </li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#debug">Debug</a>
+                </li>
+                <?php if (isAuth()): ?>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="assets/logout.php">Déconnexion<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="./profil.php?id=<?php echo $_SESSION['auth_id']; ?>">profile</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link active" href="register.php">Inscription<span class="sr-only">(current)</span></a>
 
-            <?php if(isAuth()): ?>
-            <li class="form-inline">
-                <a class="nav-item nav-link active" href="assets/logout.php">deconnexion<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="profil.php?id=<?php echo $_SESSION['auth_id'];?>">profile</a>
-            </li>
-            <?php else: ?>
-
-            <li>
-                <a class="nav-item nav-link active" href="register.php">Inscription<span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="login.php">Connexion</a>
-            </li>
-            <?php endif; ?>
-
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" href="login.php">Connexion</a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+            </div>
         </nav>
     </header>
 
-    <?php require_once 'debug.php';?>
+    <?php require_once 'debug.php'; ?>
 
     <main id="main">
