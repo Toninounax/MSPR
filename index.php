@@ -3,9 +3,11 @@
 <?php
 
 $dbh = connectDB();
-$id = $_GET['id'];
-$stmt = $dbh->prepare("SELECT * FROM playlists");
-$stmt->execute();
+
+
+    $id = $_GET['id'];
+    $stmt = $dbh->prepare("SELECT * FROM playlists");
+    $stmt->execute();
 
 ?>
     <!doctype html>

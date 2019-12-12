@@ -27,7 +27,7 @@ $stmt->execute();
     </ol>
 </nav>
 <div class="jumbotron">
-    <h1>Ajoutez des morceaux à votre playlist !</h1>
+    <h1>Mes morceaux</h1>
 <div class="container-fluid">
     <div class="row">
         <div class="col-8">
