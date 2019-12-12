@@ -32,21 +32,9 @@ function connectDB(){
 /**
  * @return mixed
  */
-function getUsers(){
-    $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM users");
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-
-
-/**
- * @return mixed
- */
 function getPlaylists(){
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM playlists");
+    $stmt = $dbh->prepare("SELECT playlists.*, users.first_name FROM playlists LEFT JOIN users ON playlists.user_id = users.id ");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
@@ -78,3 +66,4 @@ function getSongs($id){
 function isAuth(){
     return isset($_SESSION['auth_id']);
 }
+

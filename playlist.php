@@ -38,7 +38,7 @@ $playplay = getPlaylist($id);
                 </div>
             </div>
 
-            <div class="row"></div>
+            <div class="row">
             <?php foreach (getSongs($playplay['id']) as $song): ?>
             <div class="col-lg-4">
                 <div class="card my-5">
@@ -53,7 +53,7 @@ $playplay = getPlaylist($id);
                         <p class="card-text"><?php echo $song['artiste']; ?></p>
                     </div>
                 </div>
-                </div>
+            </div>
             <?php endforeach; ?>
         </div>
 

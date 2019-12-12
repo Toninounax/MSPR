@@ -17,6 +17,8 @@ $stmt->execute();
 
 
 
+
+
 header( "Location: ../playlist.php?id=$playlist_id");
 exit;
 

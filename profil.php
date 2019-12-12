@@ -42,7 +42,7 @@ $stmt->execute();
 
                         <?php $resultats = $stmt->fetchAll();
                         for ($i=0; $i<=count($resultats) -1; $i++){?>
-                        <div class="col">
+                        <div class="col pt-5">
                             <div class="card" style="width: 18rem;">
                                 <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
                                 <div class="card-body">

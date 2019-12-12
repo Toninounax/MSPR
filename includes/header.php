@@ -31,7 +31,7 @@
                         <a class="nav-item nav-link" href="assets/logout.php">Déconnexion<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="./profil.php?id=<?php echo $_SESSION['auth_id']; ?>">profile</a>
+                        <a class="nav-item nav-link" href="./profil.php?id=<?php echo $_SESSION['auth_id']; ?>">Profil</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
