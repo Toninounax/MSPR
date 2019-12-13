@@ -4,11 +4,10 @@
 
 <div class="card collapse" id="addComment">
 
-    <section>
-        <div>écrit par ???</div>
-        <div>blablbalbalb</div>
-        <small>écrit il y 2h</small>
-    </section>
+
+    <?php foreach (getComments() as $comment) : ?>
+    <?php require_once 'comment.php'; ?>
+    <?php endforeach; ?>
 
     <section>
         <form type="post" action="./assets/addComment.php?id=<?php echo $playlist['id']; ?>">
