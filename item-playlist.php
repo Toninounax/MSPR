@@ -14,9 +14,17 @@
 
             <a href="assets/addLike.php?id=<?php echo $playlist['id'] ?>" class="btn text-white btn-danger">J'aime</a>
 
-            <a class="btn text-white btn-secondary">Commenter</a>
+            <a class="btn btn-secondary"  data-toggle="collapse" href="#addComment">commentaire</a>
+
 
             <a href="playlist.php?id=<?php echo $playlist['id'] ?>" class="btn btn-primary">
                 Découvir !<a>
+
+
     </div>
+
+    <div>
+        <?php require_once './includes/addComment.php'?>
+    </div>
+
 </div>

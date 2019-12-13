@@ -28,6 +28,7 @@ $stmt->execute();
 <div class="container-fluid">
     <div class="row">
 
+
         <a data-toggle="collapse" href="#addPlaylist"><button>Ajouter une playlist</button></a>
         <?php require_once 'includes/addPlaylist.php'; ?>
 
@@ -54,7 +55,6 @@ $stmt->execute();
                                 </div>
                             </div>
                         </div>
-                        <?php }  ?>
 
                     </div>
                 </div>
@@ -62,7 +62,10 @@ $stmt->execute();
 
             </main>
         </div>
-        <div class="col-sm-2 text-black bord">
+
+
+
+       <div class="col-sm-2 text-black bord">
 
             <div class="card zap" style="width: 18rem;">
                 <img src="http://placehold.it/200x100" class="card-img-top" alt="...">
