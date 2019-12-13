@@ -10,7 +10,7 @@
                     <a href="#" class="list-group-item list-group-item-action active">
                         Menu
                     </a>
-                    <a href="profil.php?id=<?php echo $_SESSION['auth_id']; ?>" class="list-group-item list-group-item-action">profile</a>
+                    <a href="profil.php?id=<?php echo $_SESSION['auth_id']; ?>" class="list-group-item list-group-item-action">Profil</a>
                     <a href="#" class="list-group-item list-group-item-action active">
                         Mes playlists
                     </a>

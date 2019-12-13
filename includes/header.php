@@ -28,10 +28,10 @@
                 </li>
                 <?php if (isAuth()): ?>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="assets/logout.php">Déconnexion<span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="./profil.php?id=<?php echo $_SESSION['auth_id']; ?>">Profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="./profil.php?id=<?php echo $_SESSION['auth_id']; ?>">Profil</a>
+                        <a class="nav-item nav-link text-danger" href="assets/logout.php">Déconnexion<span class="sr-only">(current)</span></a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">

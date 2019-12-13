@@ -52,6 +52,14 @@ function getPlaylist($id){
 }
 
 
+function getSong($id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM songs WHERE id = :id");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 
 function getSongs($id){
     $dbh = connectDB();
@@ -67,6 +75,14 @@ function isAuth(){
     return isset($_SESSION['auth_id']);
 }
 
+function getPlaylistId($id){
+
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM playlist WHERE song_id = :id");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 
 

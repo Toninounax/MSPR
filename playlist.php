@@ -7,13 +7,13 @@ $playplay = getPlaylist($id);
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../mspr">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="profil.php">Profil</a></li>
+                <li class="breadcrumb-item"><a href="profil.php?id=<?php echo $_SESSION['auth_id']; ?>">Profil</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Playlist</li>
             </ol>
         </nav>
 
         <div class="jumbotron">
-            <h1>Mes morceaux</h1>
+            <h1>Mes morceaux dans ma playlist <?php echo $playplay['title']; ?></h1>
         </div>
 
         <div class="container">
@@ -39,23 +39,28 @@ $playplay = getPlaylist($id);
             </div>
 
             <div class="row">
-            <?php foreach (getSongs($playplay['id']) as $song): ?>
-            <div class="col-lg-4">
-                <div class="card my-5">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/<?php echo $song['link']; ?>"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
+                <?php foreach (getSongs($playplay['id']) as $song): ?>
+                    <div class="col-lg-4">
+                        <div class="card my-5">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item"
+                                        src="https://www.youtube.com/embed/<?php echo $song['link']; ?>"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $song['title']; ?></h5>
+                                <p class="card-text"><?php echo $song['artiste']; ?></p>
+                                <a href="assets/delete-song.php?id=<?php echo $song['id'] ?>" class="btn btn-primary">
+                                    Supprimer
+                                    <a>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $song['title']; ?></h5>
-                        <p class="card-text"><?php echo $song['artiste']; ?></p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
-            <?php endforeach; ?>
-        </div>
 
         </div>
     </section>

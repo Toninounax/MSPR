@@ -8,15 +8,15 @@
             <?php echo $playlist['title']; ?>
         </h5>
         <div><?php echo count(getPlaylistLikes($playlist['id'])); ?></div>
-       <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">Last updated 3 mins ago</small>
     </div>
     <div class="card-footer">
 
-            <a href="assets/addLike.php?id=<?php echo $playlist['id'] ?>" class="btn text-white btn-danger">J'aime</a>
+        <a href="assets/addLike.php?id=<?php echo $playlist['id'] ?>" class="btn text-white btn-danger">J'aime</a>
 
-            <a class="btn text-white btn-secondary">Commenter</a>
+        <a class="btn text-white btn-secondary">Commenter</a>
 
-            <a href="playlist.php?id=<?php echo $playlist['id'] ?>" class="btn btn-primary">
-                Découvir !<a>
+        <a href="playlist.php?id=<?php echo $playlist['id'] ?>" class="btn btn-primary">
+            Découvir !<a>
     </div>
 </div>
